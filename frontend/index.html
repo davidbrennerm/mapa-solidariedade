@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa da Solidariedade</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="shortcut icon" href="./img/icon-maps.png" type="image/x-icon">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-wrapper">
+      <h1 class="titulo">Mapa da Solidariedade</h1>
+
+      <div class="acoes-superiores">
+        <div class="botoes-auth" id="botoes-auth">
+          <button id="btn-login">Entrar</button>
+          <button id="btn-cadastro">Criar Conta</button>
+        </div>
+
+        <div class="botoes-login" id="botoes-login" style="display:none;">
+          <span id="saudacao">Olá, usuário</span>
+          <button id="btn-logout">Sair</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="acoes-inferiores" id="acoes-inferiores" style="display: none;">
+      <button id="btn-doacao">Registrar Doação</button>
+      <button id="btn-ponto">Cadastrar Ponto</button>
+    </div>
+  </header>
+
+  <section id="filtros">
+    <select id="filtro-categoria">
+      <option value="">Todas as categorias</option>
+    </select>
+    <input type="text" id="filtro-bairro" placeholder="Filtrar por bairro..." />
+  </section>
+
+  <main>
+    <div id="map"></div>
+  </main>
+
+  <div id="overlay"></div>
+
+  <section id="form-doacao" class="form-panel">
+    <button class="fechar" id="fechar-doacao">X</button>
+    <h2>Registrar Doação</h2>
+    <form id="doacao-form">
+      <select name="usuarioId" id="usuarioId" required>
+        <option value="">Selecione o usuário</option>
+      </select>
+
+      <select name="pontoId" id="pontoId" required>
+        <option value="">Selecione o ponto de doação</option>
+      </select>
+
+      <select name="categoriaId" id="categoriaId" required>
+        <option value="">Selecione a categoria</option>
+      </select>
+
+      <textarea name="descricao" placeholder="Descrição (opcional)"></textarea>
+      <button type="submit">Registrar</button>
+    </form>
+    <p id="mensagem-doacao"></p>
+  </section>
+
+  <section id="form-ponto" class="form-panel">
+    <button class="fechar" id="fechar-ponto">X</button>
+    <h2>Cadastrar Ponto de Doação</h2>
+    <form id="ponto-form">
+      <input type="text" name="nome" placeholder="Nome do local" required />
+      <textarea name="descricao" placeholder="Descrição" required></textarea>
+      <input type="text" name="endereco" placeholder="Endereço" required />
+      <input type="text" name="bairro" placeholder="Bairro" required />
+      <input type="text" name="cidade" placeholder="Cidade" required />
+      <input type="text" name="estado" placeholder="Estado" required />
+
+      <div id="mapa-cadastro"></div>
+
+      <input type="number" step="any" name="latitude" id="latitude" placeholder="Latitude" required />
+      <input type="number" step="any" name="longitude" id="longitude" placeholder="Longitude" required />
+      <input type="text" name="horarioFunc" placeholder="Horário de funcionamento" required />
+
+      <select name="categoriaId" id="categoriaIdPonto" required>
+        <option value="">Selecione a categoria</option>
+      </select>
+
+      <select name="responsavelId" id="responsavelId" required>
+        <option value="">Selecione o responsável</option>
+      </select>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+    <p id="mensagem-ponto"></p>
+  </section>
+
+  <section id="form-login" class="form-panel">
+    <button class="fechar" id="fechar-login">X</button>
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="E-mail" required />
+      <input type="password" id="login-senha" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="mensagem-login"></p>
+  </section>
+
+  <section id="form-cadastro" class="form-panel">
+    <button class="fechar" id="fechar-cadastro">X</button>
+    <h2>Criar Conta</h2>
+    <form id="cadastro-form">
+      <input type="text" id="cadastro-nome" placeholder="Nome completo" required />
+      <input type="email" id="cadastro-email" placeholder="E-mail" required />
+      <input type="password" id="cadastro-senha" placeholder="Senha" required />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <p id="mensagem-cadastro"></p>
+  </section>
+
+</body>
+
+</html>

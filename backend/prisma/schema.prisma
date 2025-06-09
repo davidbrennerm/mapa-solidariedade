@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id           Int       @id @default(autoincrement())
+  nome         String
+  email        String    @unique
+  senha        String
+  tipoUsuario  String    @default("voluntario")
+  criadoEm     DateTime  @default(now())
+  pontos       PontoDeDoacao[] @relation("ResponsavelPonto")
+  doacoes      Doacao[]
+}
+
+model Categoria {
+  id       Int       @id @default(autoincrement())
+  nome     String    @unique
+  pontos   PontoDeDoacao[]
+  doacoes  Doacao[]
+}
+
+model PontoDeDoacao {
+  id                 Int       @id @default(autoincrement())
+  nome               String
+  descricao          String?
+  endereco           String?
+  bairro             String?
+  cidade             String?   @default("Teófilo Otoni")
+  estado             String?   @default("MG")
+  latitude           Float?
+  longitude          Float?
+  horarioFunc        String?
+  criadoEm           DateTime  @default(now())
+  categoriaId        Int
+  responsavelId      Int
+  categoria          Categoria @relation(fields: [categoriaId], references: [id])
+  responsavel        Usuario   @relation("ResponsavelPonto", fields: [responsavelId], references: [id])
+  doacoes            Doacao[]
+}
+
+model Doacao {
+  id          Int       @id @default(autoincrement())
+  descricao   String?
+  dataDoacao  DateTime  @default(now())
+  usuarioId   Int
+  pontoId     Int
+  categoriaId Int
+
+  usuario     Usuario   @relation(fields: [usuarioId], references: [id])
+  ponto       PontoDeDoacao @relation(fields: [pontoId], references: [id])
+  categoria   Categoria @relation(fields: [categoriaId], references: [id])
+}

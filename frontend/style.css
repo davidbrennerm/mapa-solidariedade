@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+header {
+  background-color: #990000;
+  color: white;
+  position: relative;
+  padding: 1rem;
+  height: 150px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.acoes-superiores {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  gap: 2rem; 
+  align-items: center;
+}
+
+.botoes-auth {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.botoes-login {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.botoes-auth button,
+.botoes-login button {
+  padding: 0.5rem 0.8rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: #990000;
+  transition: background-color 0.2s;
+}
+
+.botoes-auth button:hover,
+.botoes-login button:hover {
+  background-color: #f2f2f2;
+}
+
+
+.acoes-inferiores {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.acoes-inferiores button {
+  padding: 0.5rem 0.8rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  color: #990000;
+  transition: background-color 0.2s;
+}
+
+.acoes-inferiores button:hover {
+  background-color: #f2f2f2;
+}
+
+#map {
+  width: 100%;
+  height: 83vh;
+}
+
+#mapa-cadastro {
+  height: 200px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+
+#filtros {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #eef1f5;
+  justify-content: center;
+}
+
+#filtros select,
+#filtros input {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+}
+
+.form-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 999;
+  padding: 1rem;
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.form-panel .fechar {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+form button {
+  background-color: #990000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #cc0000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+p {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
