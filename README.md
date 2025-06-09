@@ -36,6 +36,7 @@ O **Mapa da Solidariedade** conecta voluntários e doadores a locais de coleta d
 ```bash
 git clone https://github.com/SEU-USUARIO/mapa-solidariedade.git
 cd mapa-solidariedade
+```
 
 ### 2. Configure o banco de dados
 
