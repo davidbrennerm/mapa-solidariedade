@@ -112,7 +112,7 @@ open index.html    # (Mac)
 ### 📋 Formulário de Doação
 ![Formulário de Doação](assets/formulario-doacao.png)
 
-### 📋 Formulário de Doação
+### 📋 Formulário cadastro de Ponto de Doação
 ![Formulário de Doação](assets/formulario-pontos.png)
 
 ### 🔐 Tela de Login
