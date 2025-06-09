@@ -123,7 +123,7 @@ open index.html    # (Mac)
 ### 📘 Documentação
 
 O relatório completo do projeto pode ser acessado no Google Drive:
-📎 Link para o relatório
+📎 https://docs.google.com/document/d/1nGwK16EJvRI5LZczBPpV3B7Fq7iWESqpzWXmLWy2WZ4/edit?usp=sharing
 
 ---
 
