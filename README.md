@@ -1,6 +1,6 @@
 # Mapa da Solidariedade
 
-Projeto de extensão do curso de Sistemas de Informação — UNIDOCTUM  
+Projeto de extensão do curso de Análise e Desenvolvimento de Sistemas — UNIDOCTUM  
 Sistema web para mapeamento de pontos de doação e registro de doações na cidade de Teófilo Otoni – MG.
 
 ---
